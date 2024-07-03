@@ -1,4 +1,4 @@
-import './EditableModeButtons.css';
+import "./EditableModeButtons.css";
 
 export default function EditableModeButtons({ editMode }) {
   return editMode ? (
