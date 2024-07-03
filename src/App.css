@@ -1,6 +1,10 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+header {
+  min-width: 100%;
+  height: 50px;
+  background-color: #B6CFB6;
   text-align: center;
+}
+
+header h1 {
+  color: white;
 }
