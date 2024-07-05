@@ -9,11 +9,42 @@ export default function Card({ initialData, initialEditMode }) {
 
   return (
     <div className="card">
-      <EditableCoverImage value={imgUrl} editMode={initialEditMode} />
-      <EditableTextInput value={title} editMode={initialEditMode} />
-      <EditableTextInput value={author} editMode={initialEditMode} />
-      <EditableTextInput value={genre} editMode={initialEditMode} />
-      <EditableRatingInput value={rating} editMode={initialEditMode} />
+      <EditableCoverImage 
+        value={imgUrl} 
+        editMode={initialEditMode} 
+      />
+      <p>
+        <label htmlFor="title">Title: </label>
+        <EditableTextInput
+          id="title"
+          value={title}
+          editMode={initialEditMode}
+        />
+      </p>
+      <p>
+        <label htmlFor="author">Author: </label>
+        <EditableTextInput
+          id="author"
+          value={author}
+          editMode={initialEditMode}
+        />
+      </p>
+      <p>
+        <label htmlFor="genre">Genre: </label>
+        <EditableTextInput
+          id="genre"
+          value={genre}
+          editMode={initialEditMode}
+        />
+      </p>
+      <p>
+        <label htmlFor="rating">Rating: </label>
+        <EditableRatingInput
+          id="rating"
+          value={rating}
+          editMode={initialEditMode}
+        />/10
+      </p>
       <EditableModeButtons editMode={initialEditMode} />
     </div>
   );

@@ -1,5 +1,13 @@
-import './EditableTextInput.css';
+import "./EditableTextInput.css";
 
 export default function EditableTextInput({ value, editMode }) {
-  return editMode ? <input type="text" value={value} /> : <span>{value}</span>;
+  return (
+    <div className="input-container">
+      {editMode ? (
+        <input type="text" value={value} />
+      ) : (
+        <span>{value}</span>
+      )}
+    </div>
+  );
 }

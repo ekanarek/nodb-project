@@ -6,4 +6,21 @@
     border: 1px solid #d4f0f0;
     border-radius: 10px;
     position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card label {
+    margin-right: 10px;
+    white-space: nowrap;
 }

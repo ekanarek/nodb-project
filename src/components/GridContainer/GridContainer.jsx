@@ -2,18 +2,23 @@ import "./GridContainer.css";
 import AddCardButton from "../AddCardButton/AddCardButton.jsx";
 import Card from "../Card/Card.jsx";
 
-export default function GridContainer() {
+export default function GridContainer({ initialData }) {
+  const cards = initialData.map((book) => {
+    const { id, imgUrl, title, author, genre, rating } = book;
+
+    return (
+      <Card
+        key={id} 
+        initialData={{ imgUrl, title, author, genre, rating }} 
+        initialEditMode={false}
+      />
+    )
+  })
+
   return (
     <div className="grid">
       <AddCardButton />
-      <Card
-        initialData={{ imgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1671146784i/57127277.jpg', title: 'Kaikeyi', author: 'Vaishnavi Patel', genre: 'Fantasy', rating: 7 }}
-        initialEditMode={true}
-      />
-      <Card
-        initialData={{ imgUrl: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1671146784i/57127277.jpg', title: 'Kaikeyi', author: 'Vaishnavi Patel', genre: 'Fantasy', rating: 7 }}
-        initialEditMode={false}
-      />
+      {cards}
     </div>
   );
 }
