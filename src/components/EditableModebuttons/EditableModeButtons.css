@@ -1,6 +1,5 @@
 .edit-buttons, 
 .save-button {
-    position: absolute;
     bottom: 10px;
     display: flex;
     justify-content: center;

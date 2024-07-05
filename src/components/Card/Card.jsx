@@ -3,9 +3,16 @@ import EditableCoverImage from "../EditableCoverImage/EditableCoverImage.jsx";
 import EditableTextInput from "../EditableTextInput/EditableTextInput.jsx";
 import EditableRatingInput from "../EditableRatingInput/EditableRatingInput.jsx";
 import EditableModeButtons from "../EditableModeButtons/EditableModeButtons.jsx";
+import { useState } from "react";
 
 export default function Card({ initialData, initialEditMode }) {
-  const { imgUrl, title, author, genre, rating } = initialData;
+  const [editMode, setEditMode] = useState(initialEditMode);
+
+  const [imgUrl, setImgUrl] = useState(initialData.imgUrl);
+  const [title, setTitle] = useState(initialData.title);
+  const [author, setAuthor] = useState(initialData.author);
+  const [genre, setGenre] = useState(initialData.genre);
+  const [rating, setRating] = useState(initialData.rating);
 
   return (
     <div className="card">
