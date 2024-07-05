@@ -2,7 +2,7 @@ import "./EditableModeButtons.css";
 
 export default function EditableModeButtons({ editMode }) {
   return editMode ? (
-    <button>Save</button>
+    <button className="save-button">Save</button>
   ) : (
     <div className="edit-buttons">
       <button>

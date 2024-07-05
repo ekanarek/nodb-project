@@ -1,0 +1,11 @@
+.edit-buttons, 
+.save-button {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.edit-buttons button {
+    margin: 0 5px;
+}
