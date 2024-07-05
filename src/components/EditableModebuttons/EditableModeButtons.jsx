@@ -1,6 +1,6 @@
 import "./EditableModeButtons.css";
 
-export default function EditableModeButtons({ editMode, onSaveClick, onEditClick }) {
+export default function EditableModeButtons({ editMode, onSaveClick, onEditClick, onDeleteClick }) {
   return editMode ? (
     <button className="save-button" onClick={onSaveClick}>Save</button>
   ) : (
@@ -8,7 +8,7 @@ export default function EditableModeButtons({ editMode, onSaveClick, onEditClick
       <button onClick={onEditClick}>
         <span className="material-symbols-outlined">edit</span>
       </button>
-      <button>
+      <button onClick={onDeleteClick}>
         <span className="material-symbols-outlined">delete</span>
       </button>
     </div>

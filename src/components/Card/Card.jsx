@@ -5,7 +5,7 @@ import EditableRatingInput from "../EditableRatingInput/EditableRatingInput.jsx"
 import EditableModeButtons from "../EditableModeButtons/EditableModeButtons.jsx";
 import { useState } from "react";
 
-export default function Card({ initialData, initialEditMode }) {
+export default function Card({ initialData, initialEditMode, onDeleteBook }) {
   const [editMode, setEditMode] = useState(initialEditMode);
 
   const [imgUrl, setImgUrl] = useState(initialData.imgUrl);
@@ -85,6 +85,7 @@ export default function Card({ initialData, initialEditMode }) {
         editMode={editMode} 
         onEditClick={setEditing} 
         onSaveClick={setNotEditing} 
+        onDeleteClick={onDeleteBook}
       />
     </div>
   );
