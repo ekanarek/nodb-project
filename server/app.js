@@ -7,6 +7,7 @@ const app = express();
 const port = "8000";
 
 app.use(morgan("dev"));
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 ViteExpress.config({ printViteDevServerHost: true });
@@ -80,6 +81,8 @@ app.put("/api/books/:id", (req, res) => {
     res.status(404).json({ error: `Book with ID ${id} not found.` });
   } else {
     const book = TEST_DATA[index];
+
+    console.log('Old book data:', book);
 
     book.imgUrl = imgUrl || book.imgUrl;
     book.title = title || book.title;

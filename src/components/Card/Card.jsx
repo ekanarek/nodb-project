@@ -4,6 +4,7 @@ import EditableTextInput from "../EditableTextInput/EditableTextInput.jsx";
 import EditableRatingInput from "../EditableRatingInput/EditableRatingInput.jsx";
 import EditableModeButtons from "../EditableModeButtons/EditableModeButtons.jsx";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Card({ initialData, initialEditMode, onDeleteBook }) {
   const [editMode, setEditMode] = useState(initialEditMode);
@@ -15,13 +16,30 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
   const [rating, setRating] = useState(initialData.rating);
 
   const setEditing = () => setEditMode(true);
-  const setNotEditing = () => {
+  const setNotEditing = async () => {
     if (isNaN(rating)) {
-      alert('Please enter a valid number for the rating!');
+      alert("Please enter a valid number for the rating!");
       return;
     }
-    setEditMode(false);
-  }
+      const { data } = await axios.put(`/api/books/${initialData.id}`, {
+        imgUrl,
+        title,
+        author,
+        genre,
+        rating,
+      });
+
+      if (!data.error) {
+        setImgUrl(data.imgUrl);
+        setTitle(data.title);
+        setAuthor(data.author);
+        setGenre(data.genre);
+        setRating(data.rating);
+        setEditMode(false);
+      } else {
+        alert("Failed to update the book.");
+      }
+  };
 
   const handleImgUrlChange = (event) => {
     setImgUrl(event.target.value);
@@ -43,12 +61,11 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
     setRating(event.target.value);
   };
 
-
   return (
     <div className="card">
-      <EditableCoverImage 
-        value={imgUrl} 
-        editMode={editMode} 
+      <EditableCoverImage
+        value={imgUrl}
+        editMode={editMode}
         onChange={handleImgUrlChange}
       />
       <p>
@@ -85,12 +102,13 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
           value={rating}
           editMode={editMode}
           onChange={handleRatingChange}
-        />/10
+        />
+        /10
       </p>
-      <EditableModeButtons 
-        editMode={editMode} 
-        onEditClick={setEditing} 
-        onSaveClick={setNotEditing} 
+      <EditableModeButtons
+        editMode={editMode}
+        onEditClick={setEditing}
+        onSaveClick={setNotEditing}
         onDeleteClick={onDeleteBook}
       />
     </div>
