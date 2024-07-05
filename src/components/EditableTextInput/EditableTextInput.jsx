@@ -1,13 +1,13 @@
 import "./EditableTextInput.css";
 
-export default function EditableTextInput({ value, editMode }) {
+export default function EditableTextInput({ value, editMode, onChange }) {
   return (
-    <div className="input-container">
+    <span className="input-container">
       {editMode ? (
-        <input type="text" value={value} />
+        <input type="text" value={value} onChange={onChange} />
       ) : (
         <span>{value}</span>
       )}
-    </div>
+    </span>
   );
 }
