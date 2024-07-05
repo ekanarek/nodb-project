@@ -15,7 +15,13 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
   const [rating, setRating] = useState(initialData.rating);
 
   const setEditing = () => setEditMode(true);
-  const setNotEditing = () => setEditMode(false);
+  const setNotEditing = () => {
+    if (isNaN(rating)) {
+      alert('Please enter a valid number for the rating!');
+      return;
+    }
+    setEditMode(false);
+  }
 
   const handleImgUrlChange = (event) => {
     setImgUrl(event.target.value);
