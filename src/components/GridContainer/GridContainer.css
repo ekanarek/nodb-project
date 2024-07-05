@@ -1,8 +1,18 @@
 .grid {
+    display: flex;
+    flex-wrap: wrap;
     width: 1000px;
     margin: auto;
     margin-top: 20px;
-    padding: 10px;
     border: 1px solid #cce2cb;
+    border-radius: 10px;
+}
+
+.card {
+    width: 200px;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #d4f0f0;
     border-radius: 10px;
 }
