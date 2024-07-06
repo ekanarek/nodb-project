@@ -1,16 +1,16 @@
 .input-container {
-    display: inline-flex;
-    flex-wrap: wrap;
+  display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .input-container input {
-    flex: 1;
-    max-width: 100%;
-    margin-right: 10px;
-    box-sizing: border-box;
+  flex: 1;
+  max-width: 100%;
+  margin-right: 10px;
+  box-sizing: border-box;
 }
 
 .input-container span {
-    flex: 1;
-    white-space: normal;
+  flex: 1;
+  white-space: normal;
 }

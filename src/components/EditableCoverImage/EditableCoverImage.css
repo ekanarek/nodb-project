@@ -1,11 +1,11 @@
 img {
-    max-height: 200px;
-    display: block;
-    margin: auto;
-    border-radius: 10px;
-    margin-bottom: 10px;
+  max-height: 200px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .imgUrl {
-    width: 179px;
+  width: 179px;
 }

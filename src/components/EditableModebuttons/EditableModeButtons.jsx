@@ -1,8 +1,15 @@
 import "./EditableModeButtons.css";
 
-export default function EditableModeButtons({ editMode, onSaveClick, onEditClick, onDeleteClick }) {
+export default function EditableModeButtons({
+  editMode,
+  onSaveClick,
+  onEditClick,
+  onDeleteClick,
+}) {
   return editMode ? (
-    <button className="save-button edit-buttons" onClick={onSaveClick}>Save</button>
+    <button className="save-button edit-buttons" onClick={onSaveClick}>
+      Save
+    </button>
   ) : (
     <div className="edit-buttons">
       <button className="edit-button" onClick={onEditClick}>

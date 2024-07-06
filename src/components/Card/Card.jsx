@@ -21,24 +21,24 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
       alert("Please enter a valid number for the rating!");
       return;
     }
-      const { data } = await axios.put(`/api/books/${initialData.id}`, {
-        imgUrl,
-        title,
-        author,
-        genre,
-        rating,
-      });
+    const { data } = await axios.put(`/api/books/${initialData.id}`, {
+      imgUrl,
+      title,
+      author,
+      genre,
+      rating,
+    });
 
-      if (!data.error) {
-        setImgUrl(data.imgUrl);
-        setTitle(data.title);
-        setAuthor(data.author);
-        setGenre(data.genre);
-        setRating(data.rating);
-        setEditMode(false);
-      } else {
-        alert("Failed to update the book.");
-      }
+    if (!data.error) {
+      setImgUrl(data.imgUrl);
+      setTitle(data.title);
+      setAuthor(data.author);
+      setGenre(data.genre);
+      setRating(data.rating);
+      setEditMode(false);
+    } else {
+      alert("Failed to update the book.");
+    }
   };
 
   const handleImgUrlChange = (event) => {
@@ -105,12 +105,12 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
         />
         /10
       </p>
-        <EditableModeButtons
-          editMode={editMode}
-          onEditClick={setEditing}
-          onSaveClick={setNotEditing}
-          onDeleteClick={onDeleteBook}
-        />
+      <EditableModeButtons
+        editMode={editMode}
+        onEditClick={setEditing}
+        onSaveClick={setNotEditing}
+        onDeleteClick={onDeleteBook}
+      />
     </div>
   );
 }

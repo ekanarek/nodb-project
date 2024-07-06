@@ -82,7 +82,7 @@ app.put("/api/books/:id", (req, res) => {
   } else {
     const book = TEST_DATA[index];
 
-    console.log('Old book data:', book);
+    console.log("Old book data:", book);
 
     book.imgUrl = imgUrl || book.imgUrl;
     book.title = title || book.title;
@@ -95,16 +95,16 @@ app.put("/api/books/:id", (req, res) => {
 });
 
 app.delete("/api/books/:id/delete", (req, res) => {
-    const { id } = req.params;
+  const { id } = req.params;
 
-    const index = TEST_DATA.findIndex((book) => book.id === Number(id));
-    if (index === -1) {
-        res.status(404).json({ error: `Book with ID ${id} not found.`});
-    } else {
-        TEST_DATA.splice(index, 1);
-        res.json({ id: Number(id) });
-    }
-})
+  const index = TEST_DATA.findIndex((book) => book.id === Number(id));
+  if (index === -1) {
+    res.status(404).json({ error: `Book with ID ${id} not found.` });
+  } else {
+    TEST_DATA.splice(index, 1);
+    res.json({ id: Number(id) });
+  }
+});
 
 ViteExpress.listen(app, port, () =>
   console.log(`Server running at http://localhost:${port}`)
