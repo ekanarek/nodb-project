@@ -105,12 +105,12 @@ export default function Card({ initialData, initialEditMode, onDeleteBook }) {
         />
         /10
       </p>
-      <EditableModeButtons
-        editMode={editMode}
-        onEditClick={setEditing}
-        onSaveClick={setNotEditing}
-        onDeleteClick={onDeleteBook}
-      />
+        <EditableModeButtons
+          editMode={editMode}
+          onEditClick={setEditing}
+          onSaveClick={setNotEditing}
+          onDeleteClick={onDeleteBook}
+        />
     </div>
   );
 }

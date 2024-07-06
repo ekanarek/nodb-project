@@ -3,3 +3,16 @@
     height: 400px;
     border: 1px solid #d4f0f0;
 }
+
+.add-button {
+    background-color: white;
+}
+
+.add-circle {
+    font-size: 10.5em;
+    color: #97C1A9;
+}
+
+.add-circle:hover {
+    cursor: pointer;
+}

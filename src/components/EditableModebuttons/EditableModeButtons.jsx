@@ -2,14 +2,14 @@ import "./EditableModeButtons.css";
 
 export default function EditableModeButtons({ editMode, onSaveClick, onEditClick, onDeleteClick }) {
   return editMode ? (
-    <button className="save-button" onClick={onSaveClick}>Save</button>
+    <button className="save-button edit-buttons" onClick={onSaveClick}>Save</button>
   ) : (
     <div className="edit-buttons">
-      <button onClick={onEditClick}>
-        <span className="material-symbols-outlined">edit</span>
+      <button className="edit-button" onClick={onEditClick}>
+        <span className="material-symbols-outlined edit-symbol">edit</span>
       </button>
-      <button onClick={onDeleteClick}>
-        <span className="material-symbols-outlined">delete</span>
+      <button className="delete-button" onClick={onDeleteClick}>
+        <span className="material-symbols-outlined delete-symbol">delete</span>
       </button>
     </div>
   );

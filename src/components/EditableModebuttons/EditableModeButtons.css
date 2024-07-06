@@ -1,10 +1,23 @@
-.edit-buttons, 
-.save-button {
+.edit-buttons {
+    position: absolute;
     bottom: 10px;
-    display: flex;
-    justify-content: center;
+    left: 50%;
+    margin-left: -25px;
 }
 
-.edit-buttons button {
-    margin: 0 5px;
+.save-button {
+    padding: 5px;
+    font-size: 1em;
+    background-color: #CCE2CB;
+    border-radius: 5px;
+}
+
+.edit-button,
+.delete-button {
+    background-color: #CCE2CB;
+    border-radius: 5px;
+}
+
+.delete-button {
+    margin-left: 5px;
 }
